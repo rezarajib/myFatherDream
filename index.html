@@ -5,23 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>কৃষক থেকে বাজার</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal.active {
-      display: flex;
-    }
-  </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -29,6 +12,7 @@
   <header class="bg-green-600 text-white p-6">
     <div class="container mx-auto">
       <h1 class="text-3xl font-bold text-center">কৃষক থেকে বাজার</h1>
+      <h1 class="text-3xl font-bold text-center">Bapari Family  আজাহার বেপারী and মালেক </h1>
     </div>
   </header>
 
@@ -37,90 +21,90 @@
     <div class="container mx-auto">
       <section id="products">
         <h2 class="text-2xl font-semibold text-center mb-6">আমাদের পণ্য</h2>
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- পণ্যগুলো এখানে JavaScript এর মাধ্যমে যুক্ত হবে -->
-        </div>
-      </section>
-    </div>
-  </main>
 
-  <!-- Order Modal -->
-  <div id="orderModal" class="modal">
-    <div class="bg-white p-6 rounded shadow-md max-w-sm w-full">
-      <h3 class="text-xl font-bold mb-4" id="modalProductName">পণ্যের তথ্য</h3>
-      <p id="modalDetails"></p>
-      <button id="closeModal" class="mt-4 w-full bg-red-600 text-white py-2 rounded hover:bg-red-700">বন্ধ করুন</button>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-green-600 text-white py-4 mt-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; ২০২৪ কৃষক থেকে বাজার. সকল স্বত্ব সংরক্ষিত।</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // পণ্যের ডেটা অ্যারে
-    const products = [
-      { name: "তিল", price: 100, image: "https://via.placeholder.com/300" },
-      { name: "সরিষা", price: 80, image: "https://via.placeholder.com/300" },
-      { name: "চাল", price: 50, image: "https://via.placeholder.com/300" },
-    ];
-
-    // প্রোডাক্ট লোড করার ফাংশন
-    function loadProducts() {
-      const productGrid = document.getElementById("product-grid");
-      products.forEach((product, index) => {
-        const productCard = `
+        <!-- Product Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          
+          <!-- Product 1 -->
           <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+            <img src="images/til.png" alt="তিল" class="w-full h-48 object-cover">
             <div class="p-4">
-              <h3 class="text-lg font-semibold">${product.name}</h3>
-              <p class="text-gray-600">মূল্য: <span class="font-bold">${product.price} টাকা/কেজি</span></p>
+              <h3 class="text-lg font-semibold">তিল</h3>
+              <p class="text-gray-600">মূল্য: <span class="font-bold">১০০ টাকা/কেজি</span></p>
               <button 
                 class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
-                onclick="placeOrder(${index})"
+                onclick="placeOrder('তিল', 100)"
               >
                 অর্ডার করুন
               </button>
             </div>
           </div>
-        `;
-        productGrid.innerHTML += productCard;
-      });
-    }
 
-    // অর্ডার ফাংশন
-    function placeOrder(index) {
-      const product = products[index];
+          <!-- Product 2 -->
+          <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="images/sorisa.png" alt="সরিষা" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold">সরিষা</h3>
+              <p class="text-gray-600">মূল্য: <span class="font-bold">৮2 টাকা/কেজি</span></p>
+              <button 
+                class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+                onclick="placeOrder('সরিষা', 82)"
+              >
+                অর্ডার করুন
+              </button>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src="images/chal.png" alt="চাল" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold">চাল</h3>
+              <p class="text-gray-600">মূল্য: <span class="font-bold">৫০ টাকা/কেজি</span></p>
+              <button 
+                class="mt-4 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+                onclick="placeOrder('চাল', 50)"
+              >
+                অর্ডার করুন
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-white py-4 mt-8">
+    <div class="container mx-auto text-center">
+      <p>&copy;  তোরাপগঞ্জ বাজার টাংগাইল' ২০২৪ কৃষক থেকে বাজার. সকল স্বত্ব সংরক্ষিত।</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // অর্ডার নেওয়ার ফাংশন
+    function placeOrder(productName, productPrice) {
       const quantity = prompt(`আপনার পছন্দের পণ্যের পরিমাণ (কেজি) লিখুন:`);
 
       if (quantity && !isNaN(quantity)) {
-        const totalPrice = quantity * product.price;
+        const totalPrice = quantity * productPrice;
 
-        // মডাল এ ডেটা দেখানো
-        const modal = document.getElementById("orderModal");
-        const modalProductName = document.getElementById("modalProductName");
-        const modalDetails = document.getElementById("modalDetails");
+        // কনফার্মেশন বার্তা
+        alert(`আপনি ${quantity} কেজি ${productName} অর্ডার করেছেন। মোট মূল্য: ${totalPrice} টাকা। ধন্যবাদ!`);
 
-        modalProductName.innerText = product.name;
-        modalDetails.innerText = `আপনি ${quantity} কেজি অর্ডার করেছেন। মোট মূল্য: ${totalPrice} টাকা।`;
-
-        modal.classList.add("active");
+        // ভবিষ্যতে এখানে সার্ভারে তথ্য পাঠানো যুক্ত করা যেতে পারে
+        console.log({
+          product: productName,
+          pricePerKg: productPrice,
+          quantity: quantity,
+          total: totalPrice
+        });
       } else {
         alert("সঠিক পরিমাণ লিখুন।");
       }
     }
-
-    // মডাল বন্ধ করার ফাংশন
-    document.getElementById("closeModal").addEventListener("click", () => {
-      document.getElementById("orderModal").classList.remove("active");
-    });
-
-    // পণ্য লোড
-    loadProducts();
   </script>
 
 </body>
